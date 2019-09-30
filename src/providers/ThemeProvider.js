@@ -8,19 +8,13 @@ const ThemeContext = createContext({
 });
 export const useTheme = () => useContext(ThemeContext);
 
-const useEffectDarkMode = () => {
+export default ({ children }) => {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const lsDark = localStorage.getItem('dark') === 'true';
     setDark(lsDark);
   }, []);
-
-  return [dark, setDark];
-};
-
-export default ({ children }) => {
-  const [dark, setDark] = useEffectDarkMode();
 
   const toggleTheme = () => {
     localStorage.setItem('dark', JSON.stringify(!dark));
