@@ -1,4 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
+import { CssBaseline } from '@material-ui/core';
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import { ThemeProvider as MUIThemeProvider } from '@material-ui/styles';
 
@@ -37,6 +38,7 @@ export default ({ children }) => {
           toggleTheme
         }}
       >
+        <CssBaseline />
         {children}
       </ThemeContext.Provider>
     </MUIThemeProvider>

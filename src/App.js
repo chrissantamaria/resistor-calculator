@@ -26,7 +26,6 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <CssBaseline />
       <NotificationProvider>
         <div className={classes.app}>
           <NavBar />
