@@ -72,7 +72,7 @@ export default function Calculator() {
       </div>
 
       <div className={classes.section}>
-        <Typography variant="h4"># of Resistors</Typography>
+        <Typography variant="h4">Max # of Resistors</Typography>
         <div className={classes.numResistors}>
           <IconButton onClick={decNumResistors}>
             <NavigateBefore />
