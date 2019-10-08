@@ -1,11 +1,11 @@
 import React from 'react';
-import { Paper, Container } from '@material-ui/core';
-import { CssBaseline } from '@material-ui/core';
+import { Grid, Paper, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ThemeProvider from './providers/ThemeProvider';
 import NotificationProvider from './providers/NotificationProvider';
 import Calculator from './Calculator';
+import About from './About';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
@@ -15,8 +15,11 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     minHeight: '100vh'
   },
+  grid: {
+    padding: 20
+  },
   paper: {
-    margin: 40,
+    margin: 10,
     padding: 20
   }
 });
@@ -29,10 +32,19 @@ export default function App() {
       <NotificationProvider>
         <div className={classes.app}>
           <NavBar />
-          <Container maxWidth="sm">
-            <Paper className={classes.paper}>
-              <Calculator />
-            </Paper>
+          <Container maxWidth="lg">
+            <Grid container className={classes.grid} spacing={0}>
+              <Grid item md={4} xs={12}>
+                <Paper className={classes.paper}>
+                  <Calculator />
+                </Paper>
+              </Grid>
+              <Grid item md={8} xs={12}>
+                <Paper className={classes.paper}>
+                  <About />
+                </Paper>
+              </Grid>
+            </Grid>
           </Container>
           <Footer />
         </div>
