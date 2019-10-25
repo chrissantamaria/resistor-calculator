@@ -1,5 +1,5 @@
 import resistors from './resistors';
-import { permutation } from 'js-combinatorics';
+import Combinatorics from 'js-combinatorics';
 import mem from 'mem';
 
 const sum = values => values.reduce((a, b) => a + b, 0);
@@ -7,7 +7,7 @@ const parallelResistance = values => 1 / sum(values.map(val => 1 / val));
 const percentError = (calc, exact) => Math.abs((calc - exact) / exact);
 export const toPrecision = (value, n) => Number(value.toPrecision(n));
 
-const getPermutations = mem(n => permutation(resistors, n).toArray());
+const getPermutations = mem(n => Combinatorics.baseN(resistors, n).toArray());
 const getAllPermutations = mem(n =>
   new Array(n)
     .fill()
