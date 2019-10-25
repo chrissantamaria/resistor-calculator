@@ -60,6 +60,15 @@ export default function About() {
         or greater. However, it works for most cases as two resistors is usually
         plenty to find a suitable combination.
       </Typography>
+
+      <br />
+      <Typography variant="body1">
+        {'The source for this project can be found '}
+        <a href="https://github.com/chrissantamaria/resistor-calculator">
+          here
+        </a>
+        .
+      </Typography>
     </>
   );
 }
